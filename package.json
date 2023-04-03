@@ -1,0 +1,27 @@
+{
+  "name": "fvquicklist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "cypress-plugin-tab": "^1.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rimenitc@bitbucket.org/rimenitc/futurvault.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/rimenitc/futurvault/issues"
+  },
+  "homepage": "https://bitbucket.org/rimenitc/futurvault#readme",
+  "description": ""
+}
