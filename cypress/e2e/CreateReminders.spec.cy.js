@@ -76,34 +76,6 @@ it('Check Remider page and Create Reminder/Edit Reminder/Delete Reminder',() =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-     
-
-
-
-        
-        
-        
-        
-
-
-
-
-
         })
 
 })

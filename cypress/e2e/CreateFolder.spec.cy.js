@@ -1,26 +1,26 @@
 /// <reference types="cypress" />
 
-const visitUrl = 'https://testoba.beta.futurevault.com/'; 
-// const visitUrl = 'https://testoba.beta.futurevault.com/';
-const loginCred = {
-  'vh':{
-    'email':'asrimen79+vh+dec9+3@gmail.com', // Login vault user 
-    'password':'Rimen1234'
- 
-  }
-};
 
-context('Create folder in all documents page', () => {
-  beforeEach(() => {
-    cy.visit(visitUrl);
-  });
 
-  it('Create Folder in all documents page', { 
+
+
+      it('Create Folder in all documents page', { 
     
-    }, () => {
-    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email);
-    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password);
-    cy.get('.button').click()
+      }, () => {
+      cy.visit('https://gta.beta.futurevault.com/')
+      cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+      if ($ele.is(":enabled")) {
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+janu19+1@gmail.com')
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000)  
+      }
+      else
+      {
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000) 
+      }
 
     
     cy.get('.sidebar__dropdown-group--expanded > :nth-child(1) > .sidebar__link').dblclick()

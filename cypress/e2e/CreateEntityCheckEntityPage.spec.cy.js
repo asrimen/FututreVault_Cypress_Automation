@@ -1,14 +1,24 @@
-
+/// <reference types="cypress" />
 
 
 it('Create Entity and verify created entity and entity page',() =>{
 
-    cy.visit('https://gta.beta.futurevault.com/')
-    
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
-    cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
-    cy.get('.button').click()
-    cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+  cy.visit('https://gta.beta.futurevault.com/')
+  cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+      if ($ele.is(":enabled")) {
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+janu19+1@gmail.com')
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000)  
+      }
+      else
+      {
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000) 
+      }
+      
+cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
@@ -38,17 +48,25 @@ it('Create Entity and verify created entity and entity page',() =>{
 
 
 
-
-
     })
+  })
     
 
      it('Update Entity and save successfully',() => {
-
-        cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
-        cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
-        cy.get('.button').click()
-        cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+      cy.visit('https://gta.beta.futurevault.com/')
+      cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+          if ($ele.is(":enabled")) {
+              cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+janu19+1@gmail.com')
+              cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+              cy.get('.button').click()
+              cy.wait(5000)  
+          }
+          else
+          {
+              cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+              cy.get('.button').click()
+              cy.wait(5000) 
+          }
 
 
         cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
@@ -78,12 +96,8 @@ it('Create Entity and verify created entity and entity page',() =>{
 
 
 
-
-
-
-        
-
-
     })
 
 
+     })
+    

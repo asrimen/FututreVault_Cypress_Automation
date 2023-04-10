@@ -7,7 +7,7 @@ const visitUrl = 'https://testoba.beta.futurevault.com/';
 
 function invoiceId_alpha_numeric(length){
   let text='';
-  var characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var characters="asrimen79";
   var charactersLength = characters.length;
   for(var i=0; i<length; i++)
   {
@@ -66,7 +66,7 @@ context('Login sponsor admin user', () => {
       cy.contains('Save').click()
         .wait(6000)
 
-        //.should('contains','Successfully created a vault')
+        cy.get('.toast__message').should('contain','Successfully created a vault')
 
         cy.get('.navbar__profile-text').click()
 
