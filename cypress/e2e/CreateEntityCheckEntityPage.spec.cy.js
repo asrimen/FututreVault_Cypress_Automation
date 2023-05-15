@@ -81,8 +81,8 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
         cy.get(':nth-child(2) > .smart-table__table-td--checkbox').dblclick()
         cy.get('[action="#"] > .form-group > :nth-child(2)').type('Cypress update') // Update New Entity Names
 
-        cy.get("select")  // Select Entity Name from Dropdown List
-        .select("Charitable Foundation")
+        cy.get('.form-group > :nth-child(3)')  // Select Entity Name from Dropdown List
+        .select("Film")
         .invoke("val")
 
         cy.get('.button__primary').click()

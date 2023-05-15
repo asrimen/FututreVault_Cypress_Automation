@@ -1,5 +1,4 @@
-
-
+/// <reference types="cypress" />
 
 it('Check Vault User Keyboard shoortcuts Page and verify page',() =>{
 
@@ -17,7 +16,7 @@ it('Check Vault User Keyboard shoortcuts Page and verify page',() =>{
             cy.get('.button').click()
             cy.wait(5000) 
         }
-cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')    // NEW CODE UDPATE ON GIT
 
 cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
 cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
@@ -39,4 +38,5 @@ cy.get('.button').should('contain' , 'Login')
 
 
 })
+
 

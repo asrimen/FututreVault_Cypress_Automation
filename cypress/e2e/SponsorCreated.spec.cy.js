@@ -15,7 +15,7 @@ function invoiceId_alpha_numeric(length){
 
 it('FutureVault Admin login and create new sponsor',() => {
 
-    cy.visit('https://admin.beta.futurevault.com/')
+    cy.visit('https://admin-k8s.dev.futurevault.com/')
 
     cy.get(':nth-child(1) > .form-control').type('asrimen79@gmail.com')
     cy.get(':nth-child(2) > .form-control').type('Pass1234')
@@ -34,11 +34,11 @@ it('FutureVault Admin login and create new sponsor',() => {
     // Check all Feature Checkboxes
 
     cy.contains('Checklist').click()
-    cy.get(':nth-child(2) > label > input').click()
     cy.get(':nth-child(3) > label > input').click()
-    cy.contains('Review Enabled').click()
     cy.get(':nth-child(4) > label > input').click()
-    cy.get('.col-sm-4 > label').click()
+    cy.contains('Review Enabled').click()
+    cy.get(':nth-child(2) > :nth-child(3) > :nth-child(1) > label').click()
+    cy.get(':nth-child(3) > :nth-child(2) > label').click()
 
     // Profile checkbox select 
 
