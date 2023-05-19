@@ -1,16 +1,40 @@
 
-// <reference types="cypress" />
+/// <reference types="cypress" />
+
+const visitUrl = 'https://gta.beta.futurevault.com/'; 
+// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
+const loginCred = {
+  'vh':{
+    'email':'starshadow005+19dec+vhh@gmail.com', // Login vault user 
+    'password':'Trupal1234'
+ 
+  }
+};
+
+  
+  beforeEach(() => {
+    cy.visit(visitUrl);
+  });
+
 
 it('Shared File and page verification ' ,()=>{
 
+    }, () => {
+       
+  cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+   if ($ele.is(":enabled")) {
+       cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
+       cy.get('.button').click()
+       cy.wait(5000)  
+   }
+   else
+   {
+       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+       cy.get('.button').click()
+       cy.wait(5000) 
+   }
 
-    cy.visit('https://gta.beta.futurevault.com/')
-
-    //cy.session('https://gta.beta.futurevault.com/')
-  
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('starshadow005+19dec+vhh@gmail.com').click()
-    cy.get('form > :nth-child(1) > :nth-child(2)').type('Trupal1234')
-    cy.get('.button').click()
     //cy.get('.page-toolbar__title').should('contain' , 'Client List')
     cy.wait(5000)
     cy.get('.dashboard__header-title').should('contain' , 'Welcome')
@@ -72,3 +96,6 @@ it('Shared File and page verification ' ,()=>{
 
 
 })
+})
+
+

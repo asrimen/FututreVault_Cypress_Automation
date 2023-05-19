@@ -1,3 +1,19 @@
+/// <reference types="cypress" />
+
+const visitUrl = 'https://gta.beta.futurevault.com/'; 
+// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
+const loginCred = {
+  'vh':{
+    'email':'asrimen79+vh+dec6+grp0@gmail.com', // Login vault user 
+    'password':'Rimen1234'
+ 
+  }
+};
+
+  
+  beforeEach(() => {
+    cy.visit(visitUrl);
+  });
 
 
 
@@ -9,8 +25,8 @@
 
     cy.visit('https://gta.beta.futurevault.com/')
     //cy.get('.token-refresh-modal__form-subtext > a').click()
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
-    cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
+    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email)
+    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password)
     cy.get('.button').click()
     cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
     
@@ -30,14 +46,14 @@
 
 
 
+   })
 
-
- })
+ 
 
 
  it('Check and Unchecked Notification check box and update notification checkbox' ,() => {
 
-    cy.visit('https://gta.beta.futurevault.com/')
+  
     cy.get('.token-refresh-modal__form-subtext > a').click()
     cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
     cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
@@ -72,6 +88,7 @@
 
 
   })
+
 
 
 

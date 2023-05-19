@@ -28,10 +28,19 @@ context('Upload file in all documents page are', () => {
     }, () => {
      
 
-    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email);
-    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password);
-    cy.get('.button').click()
-    cy.get('.button').should('contain','Login')
+      cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+        if ($ele.is(":enabled")) {
+            cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+            cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
+            cy.get('.button').click()
+            cy.wait(5000)  
+        }
+        else
+        {
+            cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+            cy.get('.button').click()
+            cy.wait(5000) 
+        }
 
 
     cy.contains('Documents').dblclick({force: true})
@@ -64,12 +73,6 @@ context('Upload file in all documents page are', () => {
 
     })
 
-
-
-
-    
-
-    
     
     
     
@@ -78,4 +81,6 @@ context('Upload file in all documents page are', () => {
     
 
 
+
+  })
 

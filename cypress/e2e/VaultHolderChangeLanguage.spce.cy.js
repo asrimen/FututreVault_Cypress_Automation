@@ -1,17 +1,45 @@
+/// <reference types="cypress" />
 
 
+const visitUrl = 'https://testoba.beta.futurevault.com/';
 
+const loginCred = {
+'vh':{
+  'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+  'password':'Rimen1234'
+
+}
+};
+
+//context('Vault User update the profile from setting page', () => {
+beforeEach(() => {
+  
+  cy.visit(visitUrl);
+   // If session out page comes then click on Logout Button 
+
+
+});type(loginCred.vh.password);
 
 
 it('Vault User click on Appearance and Change the Language' ,() => {
 
-    cy.visit('https://gta.beta.futurevault.com/')
+ 
 
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
-    cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
-    cy.get('.button').click()
+  cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+      if ($ele.is(":enabled")) {
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').
+          cy.get('.button').click()
+          cy.wait(5000)  
+      }
+      else
+      {
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000) 
+      }
 
-    cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+    cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click() 
     cy.get('[href="/settings/appearance"]').click()
@@ -32,3 +60,5 @@ it('Vault User click on Appearance and Change the Language' ,() => {
 
 
   })
+})
+

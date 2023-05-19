@@ -20,7 +20,7 @@ context('Create a new contact', () => {
 
   function invoiceId_alpha_numeric(length){
     let text='';
-    var characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var characters="asrimen798645";
     var charactersLength = characters.length;
     for(var i=0; i<length; i++)
     {
@@ -30,10 +30,21 @@ context('Create a new contact', () => {
   }
   it('Create New contact', { 
     
-    }, () => {
-    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email);
-    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password);
-    cy.get('.button').click()
+    
+  }, () => {
+    cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+      if ($ele.is(":enabled")) {
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email)
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password)
+          cy.get('.button').click()
+          cy.wait(5000)  
+      }
+      else
+      {
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get('.button').click()
+          cy.wait(5000) 
+      }
     cy.get('.sidebar__list > :nth-child(4) > .sidebar__link').click() //Click +Sign for create a contact
     cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click() //Clicko on add Contact
     cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(1)').type('Rimen+1{enter}')
@@ -50,7 +61,7 @@ context('Create a new contact', () => {
 
 
   })
-    
+})
 
   it('Update Contact Information',() => {
 

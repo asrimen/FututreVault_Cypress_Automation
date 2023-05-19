@@ -5,9 +5,6 @@ import 'cypress-file-upload';
 
 
 const visitUrl = 'https://testoba.beta.futurevault.com/';
-// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
-
-
 
   beforeEach(() => {
     

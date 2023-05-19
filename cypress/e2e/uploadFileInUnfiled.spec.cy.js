@@ -3,18 +3,34 @@
 
 import 'cypress-file-upload';
 
+const visitUrl = 'https://testoba.beta.futurevault.com/';
 
+const loginCred = {
+'vh':{
+  'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+  'password':'Rimen1234'
+
+}
+};
+
+//context('Vault User update the profile from setting page', () => {
+beforeEach(() => {
+  
+  cy.visit(visitUrl);
+   // If session out page comes then click on Logout Button 
+
+
+});
 
 
 
 it('Upload Fine in Unfiled section',() =>{
 
-    cy.visit('https://testoba.beta.futurevault.com/')
     
      cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
       if ($ele.is(":enabled")) {
-          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+oct6+test@gmail.com')
-          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
           cy.get('.button').click()
           cy.wait(5000)  
       }
@@ -61,8 +77,8 @@ it('Upload Fine in Unfiled section',() =>{
     
   cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
     if ($ele.is(":enabled")) {
-        cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+oct6+test@gmail.com')
-        cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+        cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+        cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
         cy.get('.button').click()
         cy.wait(5000)  
     }

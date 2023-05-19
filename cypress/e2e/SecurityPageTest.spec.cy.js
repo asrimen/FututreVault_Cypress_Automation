@@ -1,3 +1,19 @@
+/// <reference types="cypress" />
+
+const visitUrl = 'https://gta.beta.futurevault.com/'; 
+// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
+const loginCred = {
+  'vh':{
+    'email':'asrimen79+vh+dec6+grp0@gmail.com', // Login vault user 
+    'password':'Rimen1234'
+ 
+  }
+};
+
+  
+  beforeEach(() => {
+    cy.visit(visitUrl);
+  });
 
 
 
@@ -7,8 +23,8 @@ it('Notification page verify' ,() => {
 
     cy.visit('https://gta.beta.futurevault.com/')
     
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
-    cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
+    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email)
+    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password)
     cy.get('.button').click()
     cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
     
