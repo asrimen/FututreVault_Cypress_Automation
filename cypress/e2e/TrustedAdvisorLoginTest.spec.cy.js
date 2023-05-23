@@ -28,6 +28,7 @@ it('Login as a Trusted Advisor and check client LIst ', function()
 
 {
        
+
        cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
         if ($ele.is(":enabled")) {
             cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
@@ -37,12 +38,13 @@ it('Login as a Trusted Advisor and check client LIst ', function()
         }
         else
         {
+            cy.get('.token-refresh-modal__form-subtext > a').click()
             cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
             cy.get('.button').click()
             cy.wait(5000) 
         }
     
-    cy.get('.page-toolbar__title').should('contain', 'Client List')
+    cy.get('.page-toolbar__title').should('contain', 'Clients')
 
      //LogOut From TA user account
     cy.get('.navbar__profile-wrapper').click()
@@ -89,10 +91,8 @@ it('TA login user and accesss into Vault user account', function()
 
   
 })
+})
 
-
-
- })
 
 
 

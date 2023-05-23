@@ -33,7 +33,7 @@ context('Upload file in all documents page are', () => {
             cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
             cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
             cy.get('.button').click()
-            cy.wait(5000)  
+            cy.wait(8000)  
         }
         else
         {
@@ -56,7 +56,7 @@ context('Upload file in all documents page are', () => {
     // Upload File in All documents page area 
 
     //cy.get('[aria-label="Upload Documents"]').attachFile('../fixtures/Test.png');
-        cy.wait(5000)
+        cy.wait(8000)
 
         cy.get('.icon-view__container').attachFile('Test2.pdf', { subjectType: 'drag-n-drop' });
         

@@ -72,6 +72,7 @@ const loginCred = {
     cy.get(':nth-child(3) > .smart-table__table-row > :nth-child(3)').dblclick() // Click on Vault user
     cy.get('.dashboard__header-title').should('contain','Welcome')
     cy.get('.sidebar__dropdown-children-group > :nth-child(1) > .sidebar__link').click()
+    cy.wait(5000)
 
 
 

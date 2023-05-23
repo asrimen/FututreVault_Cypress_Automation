@@ -18,7 +18,7 @@ beforeEach(() => {
    // If session out page comes then click on Logout Button 
 
 
-});type(loginCred.vh.password);
+});
 
 
 it('Vault User click on Appearance and Change the Language' ,() => {
@@ -28,7 +28,7 @@ it('Vault User click on Appearance and Change the Language' ,() => {
   cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
       if ($ele.is(":enabled")) {
           cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
-          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').
+          cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
           cy.get('.button').click()
           cy.wait(5000)  
       }
