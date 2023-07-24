@@ -61,6 +61,7 @@ const loginCred = {
              cy.get('.navbar__profile-wrapper').click()
              cy.wait(5000)
              cy.get('[aria-label="Logout"]').click()
+             cy.wait(5000)
              cy.get('.button').should('contain' , 'Login')
    
 

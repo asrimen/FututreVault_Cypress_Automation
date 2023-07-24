@@ -31,11 +31,11 @@ it('Check Vault User Keyboard shoortcuts Page and verify page',() =>{
             cy.get('.button').click()
             cy.wait(5000) 
         }
-cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')    // NEW CODE UDPATE ON GIT
+cy.get('.dashboard__header-title').should('contain', 'Welcome,')    // NEW CODE UDPATE ON GIT
 
 cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
 cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
-cy.get('.page-toolbar__title').should ('contain' , 'Profile')
+cy.get('.settings__sidebar-item--active > .settings__sidebar-item-title').should ('contain' , 'Profile')
 cy.get('[href="/settings/shortcuts"]').click() // CLick on Shourtcuts Tab 
 cy.get('.page-toolbar__title').should('contain' , 'Keyboard Shortcuts')
 

@@ -47,6 +47,10 @@ const loginCred = {
       cy.get('.login__form-link').click()
       cy.get('.form-control__wrapper').type('asrimen79+vh+oct6+test@gmail.com')
       cy.get('.button').click()
+      cy.get('.login__form-title').should('contain','Forgot Password')
+      
+      
+      
   
         //.should('contain','An email has been sent to help you reset the password')
   

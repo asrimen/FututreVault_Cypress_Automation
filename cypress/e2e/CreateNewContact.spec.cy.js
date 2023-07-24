@@ -67,7 +67,7 @@ context('Create a new contact', () => {
 
     cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
       if ($ele.is(":enabled")) {
-          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+admin+dec6@gmail.com')
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+ref4@gmail.com')
           cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
           cy.get('.button').click()
           cy.wait(5000)  
@@ -84,8 +84,12 @@ context('Create a new contact', () => {
       
       cy.get('.sidebar__list > :nth-child(4) > .sidebar__link').click()
       cy.contains('asrimen79+ta+oct6+1@gmail.com').dblclick()
-      cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').clear().type('Rimen')
-      cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(2)').clear().type('2')
+      cy.get('.profile__header-toolbar-button-wrapper > .button__primary').click()
+      cy.get(':nth-child(3) > .profile__input-column-inner > :nth-child(1)').clear().type('Rimen up')  // First Name update 
+      cy.get(':nth-child(3) > .profile__input-column-inner > :nth-child(2)').clear().type('Ju')   // Middle Nanme update 
+      cy.get('.profile__input-column-inner > :nth-child(3)').clear().type('Cy name')   // Last Name update 
+      cy.get('.profile__input-column-inner > :nth-child(5)').clear().type('ITC')
+
       cy.contains('Save').click()
       cy.get('.toast__message').should('contain','Successfully updated contact profile')
 

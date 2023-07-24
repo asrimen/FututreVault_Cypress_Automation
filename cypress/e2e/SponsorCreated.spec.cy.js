@@ -16,6 +16,7 @@ function invoiceId_alpha_numeric(length){
 it('FutureVault Admin login and create new sponsor',() => {
 
     cy.visit('https://admin-k8s.dev.futurevault.com/')
+    cy.visit('https://admin.beta.futurevault.com/')
 
     cy.get(':nth-child(1) > .form-control').type('asrimen79@gmail.com')
     cy.get(':nth-child(2) > .form-control').type('Pass1234')
@@ -56,7 +57,7 @@ it('FutureVault Admin login and create new sponsor',() => {
     cy.get(':nth-child(8) > .form-control').select('Canada')
 
      // Host URL Type 
-    cy.get(':nth-child(9) > .form-control').type('https://').type((value)+'.dev.futurevault.com')
+    cy.get(':nth-child(9) > .form-control').type('https://').type((value)+'.beta.futurevault.com')
 
     cy.get(':nth-child(10) > .form-control').type('Gulshan1/road 119')
     cy.get(':nth-child(11) > .form-control').type('asrimen79+test@gmail.com')
@@ -70,7 +71,7 @@ it('FutureVault Admin login and create new sponsor',() => {
     cy.get('.row.form-group > :nth-child(2) > .form-control').type(value+'Rimen')
     cy.get('.row.form-group > :nth-child(3) > .form-control').type(value+'Last')
 
-    cy.get(':nth-child(18) > label > input').check()
+    cy.get(':nth-child(19) > label > input').click()
     
     cy.get('.btn-primary').click()
 

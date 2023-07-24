@@ -30,7 +30,7 @@ it('Shared File and page verification ' ,()=>{
    }
    else
    {
-       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Trupal1234')
        cy.get('.button').click()
        cy.wait(5000) 
    }
@@ -76,7 +76,7 @@ it('Shared File and page verification ' ,()=>{
 
 
     cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click() // CLick on Action 
-    cy.get(':nth-child(4) > .dropdown__list-item').click() //Click on Download button
+    cy.get('[aria-label="Download"]').click() //Click on Download button
     cy.get('.toast').should('contain' , 'Downloading')
     cy.get('.toast__message').should('contain' , 'TestShared downloaded')
 

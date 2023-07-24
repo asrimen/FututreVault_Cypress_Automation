@@ -102,7 +102,9 @@ it('Upload Fine in Unfiled section',() =>{
 
 
 
-
+    cy.get('.navbar__profile-wrapper').click()
+    cy.get('[aria-label="Logout"]').click()
+    cy.get('.button').should('contain','Login')
     
 
     

@@ -40,8 +40,15 @@ it('Download pdf file from sponsor category',() => {
       //Click on Download link and download pdf file
 
       cy.get('.document-body-details-download > .document-link').click()
-
+      cy.wait(3000)
       //cy.get('.toast__message').should('contain' , 'Test2 downloaded')
+
+
+      //Logout from user account
+
+      cy.get('.navbar__profile-text').click()
+      cy.contains('Logout').click()
+      cy.get('.button').should('contain','Login')
 
       
 

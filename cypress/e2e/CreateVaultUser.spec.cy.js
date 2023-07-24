@@ -52,8 +52,8 @@ context('Login sponsor admin user', () => {
     //Click on Create New Vault
 
     cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click()
-    cy.get('form > :nth-child(1) > .form-group > :nth-child(1)').type('Rimen')
-    cy.get('form > :nth-child(1) > .form-group > :nth-child(2)').type('Sarker')
+    cy.get('form > :nth-child(1) > .form-group > :nth-child(1)').type('Cypress')
+    cy.get('form > :nth-child(1) > .form-group > :nth-child(2)').type('Auto vault')
 
     //Funcional Script for Random Emails
 

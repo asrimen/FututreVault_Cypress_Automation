@@ -43,21 +43,31 @@
 
         cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
         cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
-        cy.get('.page-toolbar__title').should ('contain' , 'Profile')
+        cy.get('.profile__header-toolbar-button-wrapper > .button').click()
 
-        cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(1)').type('+Update cy 1s Name')
-        cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(2)').type('Last cypress')
-        cy.get('.contacts-form__wrapper > :nth-child(1) > :nth-child(4)').click()
-        cy.get('[style="display: block;"] > :nth-child(1)').type('More Update name ')  //More Update click  
-        cy.get('[style="display: block;"] > :nth-child(3)').type('ITC Company Update')
+
+        cy.get(':nth-child(3) > .profile__input-column-inner > :nth-child(1)').clear().type('Cy Rimen')
+        cy.get(':nth-child(3) > .profile__input-column-inner > :nth-child(2)').clear().type('Mid')
+        cy.get('.profile__input-column-inner > :nth-child(3)').clear().type('Last RI')
+
+
+        cy.get('.profile__input-column-inner > :nth-child(5)').clear().type('ITC')
+
 
         cy.get('.button__primary').click() //Click Save button 
+        cy.wait(5000)
+        cy.get('.toast__message').should('contain', 'Successfully updated profile')
+
 
         cy.get('.navbar__profile-wrapper').click()
         cy.get('[aria-label="Logout"]').click()
         cy.get('.button').should('contain','Login')
 
+         
 
+        cy.get('.navbar__profile-wrapper').click()
+        cy.get('[aria-label="Logout"]').click()
+        cy.get('.button').should('contain','Login')
 
 
 })

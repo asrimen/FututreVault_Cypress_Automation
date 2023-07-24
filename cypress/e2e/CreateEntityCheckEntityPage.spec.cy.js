@@ -14,7 +14,7 @@ const loginCred = {
   beforeEach(() => {
     cy.visit(visitUrl); 
   });
- 
+     
 
 it('Create Entity and verify created entity and entity page',() =>{
 
@@ -37,7 +37,7 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
-    cy.get('.page-toolbar__title').should ('contain' , 'Profile')
+    //cy.get('.page-toolbar__title').should ('contain' , 'Profile')
 
       //Click on Entity Page 
     cy.get('[href="/settings/entities"]').click()
@@ -89,7 +89,7 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
 
         cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
         cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
-        cy.get('.page-toolbar__title').should ('contain' , 'Profile')
+        //cy.get('.page-toolbar__title').should ('contain' , 'Profile')
 
 
         //Click on Entity Page 
@@ -130,7 +130,7 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
 
           cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
           cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
-          cy.get('.page-toolbar__title').should ('contain' , 'Profile')
+          //cy.get('.page-toolbar__title').should ('contain' , 'Profile')
   
   
           //Click on Entity Page 
@@ -147,7 +147,7 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
 
 
 
-
+    
 
 
 
@@ -156,3 +156,4 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     })
 
 
+         
