@@ -23,7 +23,7 @@ it('FutureVault Admin login and create new sponsor',() => {
     cy.contains('Login').click()
     cy.get('.page-header').should('contain' , 'Vault Holders')
 
-    cy.get('#LeftNavigation > .nav > :nth-child(8) > a').click()
+    cy.get('#LeftNavigation > .nav > :nth-child(9) > a').click()
     cy.get('.page-header').should('contain', 'Sponsors')
     cy.get('.text-center > .btn').click()
     //cy.get('h1').should('contain' , 'Sponsor Configuration')
@@ -35,8 +35,8 @@ it('FutureVault Admin login and create new sponsor',() => {
     // Check all Feature Checkboxes
 
     cy.contains('Checklist').click()
-    cy.get(':nth-child(3) > label > input').click()
-    cy.get(':nth-child(4) > label > input').click()
+    cy.get(':nth-child(2) > :nth-child(3) > label').click()
+    cy.get(':nth-child(4) > label').click()
     cy.contains('Review Enabled').click()
     cy.get(':nth-child(2) > :nth-child(3) > :nth-child(1) > label').click()
     cy.get(':nth-child(3) > :nth-child(2) > label').click()
@@ -62,16 +62,16 @@ it('FutureVault Admin login and create new sponsor',() => {
     cy.get(':nth-child(10) > .form-control').type('Gulshan1/road 119')
     cy.get(':nth-child(11) > .form-control').type('asrimen79+test@gmail.com')
     cy.get(':nth-child(12) > .form-control').type('https://futurevault.freshdesk.com/support/home/test')
-    cy.get(':nth-child(13) > .form-control').type('©2023 FutureVault - All Rights Reserved.')
-    cy.get(':nth-child(14) > .form-control').type(value+'Sponsor')
-    cy.get(':nth-child(15) > .form-control').type(value+'@gmail.com')
+    cy.get(':nth-child(14) > .form-control').type('©2023 FutureVault - All Rights Reserved.')
+    cy.get(':nth-child(15) > .form-control').type(value+'Sponsor')
+    cy.get(':nth-child(16) > .form-control').type(value+'@gmail.com')
     cy.get('.input-group > .form-control').type('Dashboard')
     cy.get('.row.form-group > :nth-child(1) > .form-control').select('Mr.')
 
     cy.get('.row.form-group > :nth-child(2) > .form-control').type(value+'Rimen')
     cy.get('.row.form-group > :nth-child(3) > .form-control').type(value+'Last')
 
-    cy.get(':nth-child(19) > label > input').click()
+    cy.get(':nth-child(20) > label').click()
     
     cy.get('.btn-primary').click()
 

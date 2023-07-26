@@ -47,40 +47,6 @@ const loginCred = {
   
   })
 
- })
-  
-
-  it('Sponsor admin access into vault and Verify vault user pages',()=> {
-
-
-  }, () => {
-      
-    cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
-     if ($ele.is(":enabled")) {
-         cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.SponsorAdmin.email);
-         cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.SponsorAdmin.password);
-         cy.get('.button').click()
-         cy.wait(5000)  
-     }
-     else
-     {
-         cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
-         cy.get('.button').click()
-         cy.wait(5000) 
-     }
-    //cy.get('.page-toolbar__title').should('contain' , 'Client List')
-    cy.get(':nth-child(3) > .smart-table__table-row > :nth-child(3)').dblclick() // Click on Vault user
-    cy.get('.dashboard__header-title').should('contain','Welcome')
-    cy.get('.sidebar__dropdown-children-group > :nth-child(1) > .sidebar__link').click()
-    cy.wait(5000)
-
-
-
-     
-  
-  
-  
-  })
 
  
  })
