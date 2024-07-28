@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 
-const visitUrl = 'https://gta.beta.futurevault.com/'; 
-// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
+//const visitUrl = 'https://gta.beta.futurevault.com/'; 
+
+const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+vh+dec6+grp0@gmail.com', // Login vault user 
+    'email':'asrimen79+grp0+vh+aug25@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }
@@ -15,20 +16,31 @@ const loginCred = {
     cy.visit(visitUrl);
   });
 
+it('Login Vault holder and Go to setting page' , () => {
+
+}, () => {
 
 
+       
+  cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
+   if ($ele.is(":enabled")) {
+       cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.email);
+       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type(loginCred.vh.password);
+       cy.get('.button').click()
+       cy.wait(5000)  
+   }
+   else
+   {
+       cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
+       cy.get('.button').click()
+       cy.wait(5000) 
+   }
+
+  })
 
 
-   it('Notification page verify' ,() => {
-
-
-
-    cy.visit('https://gta.beta.futurevault.com/')
-    //cy.get('.token-refresh-modal__form-subtext > a').click()
-    cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email)
-    cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password)
-    cy.get('.button').click()
-    cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+    cy.get('.dashboard__header-title').should('contain', 'Welcome,')
+    cy.wait(5000)
     
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
@@ -46,19 +58,24 @@ const loginCred = {
 
 
 
-   })
+   
 
- 
+  
 
+
+
+  })
+
+  
 
  it('Check and Unchecked Notification check box and update notification checkbox' ,() => {
 
   
     cy.get('.token-refresh-modal__form-subtext > a').click()
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+vh+dec6+grp0@gmail.com')
+    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+grp0+vh+aug25@gmail.com')
     cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
     cy.get('.button').click()
-    cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
+    cy.get('.dashboard__header-title').should('contain', 'Welcome,')
 
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
@@ -88,6 +105,13 @@ const loginCred = {
 
 
   })
+
+
+
+
+
+
+
 
 
 

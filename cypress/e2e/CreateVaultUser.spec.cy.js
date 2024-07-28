@@ -52,19 +52,18 @@ context('Login sponsor admin user', () => {
     //Click on Create New Vault
 
     cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click()
-    cy.get('form > :nth-child(1) > .form-group > :nth-child(1)').type('Cypress')
-    cy.get('form > :nth-child(1) > .form-group > :nth-child(2)').type('Auto vault')
+    cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('Cypress Vault')
+    cy.get('.form-group--column > .form-group > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen')
 
     //Funcional Script for Random Emails
 
     const value =invoiceId_alpha_numeric(6)
-    cy.get('form > :nth-child(1) > :nth-child(2)').type(value+'@gmail.com')
+    cy.get('.form-control__wrapper--error > .form-control__input-wrapper > .form-control__input > .form-control').click().type(value+'@gmail.com')
 
        //.type('{enter}') 
        cy.tab()
       .type('1234') // Reference number set 
-    cy.tab()     
-       //.type('{tab}')
+      cy.get('.form-group--column > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').click()       //.type('{tab}')
        .select("Personal") // Package selecte from list.
     cy.tab()
        .select('A1') // Tamplate select from list.

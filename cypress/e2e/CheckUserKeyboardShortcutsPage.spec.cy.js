@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
 const visitUrl = 'https://gta.beta.futurevault.com/'; 
-// const visitUrl = 'https://testoba.beta.futurevault.com/'; 
+// const visitUrl = 'https://gta.beta.futurevault.com/''; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+vh+dec6+grp0@gmail.com', // Login vault user 
+    'email':'asrimen79+vh+july17+vhgrp0@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }

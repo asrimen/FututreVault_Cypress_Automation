@@ -52,8 +52,8 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
       .select("Film")
       .invoke("val")
 
-    
-    cy.get('.button__primary').click()
+    //Click on Save button
+    cy.contains('button', 'Save').click()
     cy.get('.toast').should('contain','Successfully created entity')
     
     //Log out from User account
@@ -103,7 +103,7 @@ cy.get('.dashboard__header-title').should('contain', 'Welcome,')
         .select("Person")
         .invoke("val")
         
-        cy.get('.button__primary').click()
+        cy.contains('button', 'Update').click()
         cy.get('.toast').should('contain' , 'Successfully updated entity')  // Verify Toast message 
 
 

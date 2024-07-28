@@ -43,21 +43,21 @@ it('Create New Reminders',() =>{
         cy.contains('Reminders').click() //CLick on Reminder page 
 
         cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click()  //Click on Create New Reminder button
+        cy.get('.modal__footer-button-wrapper > :nth-child(2) > .button').click()
 
+        cy.get(':nth-child(1) > :nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Cypress Reminder')
 
-        cy.get('form > :nth-child(1) > :nth-child(2)').type('Cypress Reminder')
-
-        cy.get('form > :nth-child(1) > :nth-child(3)').type('This is Cypress message')
+        cy.get(':nth-child(1) > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').type('This is Cypress message')
         cy.get('.react-datepicker__input-container > .form-control').click()
          
        // Select date from calender  
-        cy.get('.react-datepicker__header-wrapper > :nth-child(4)').dblclick()   // Select Next month 
+       cy.get('.react-datepicker__input-container > .form-control').dblclick()   // Select Next month 
         
         cy.get('.react-datepicker__day--026').click()
         cy.get(':nth-child(5) > .react-datepicker__day--030').click()
         
         
-        cy.get('.button__primary').click()
+        cy.get('.button__info').click()
 
         cy.get('.toast').should('contain','Successfully created reminder')
         cy.get('.page-toolbar__title').should('contain','Reminders')
@@ -99,7 +99,7 @@ it('Create New Reminders',() =>{
 
         //cy.get('.react-datepicker__time-list > :nth-child(32)').click()
 
-        cy.get('.button__primary').click()
+        cy.get('.button__info').click()
         cy.get('.toast').should('contain','Successfully updated reminder')
 
   

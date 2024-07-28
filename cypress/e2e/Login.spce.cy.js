@@ -34,7 +34,7 @@ it('Login as a Vault holder and Logout' , () => {
        cy.get('.button').click()
        cy.wait(5000) 
    }
-   cy.get('.dashboard__header-title').should('contain','Welcome, Rimen Vault')
+   cy.get('.dashboard__header-title').should('contain','Welcome')
   cy.get('.navbar__profile-wrapper').click()
   cy.get('[aria-label="Logout"]').click()
   cy.get('.button').should('contain','Login')

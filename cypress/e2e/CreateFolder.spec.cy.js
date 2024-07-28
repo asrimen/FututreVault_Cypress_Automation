@@ -48,7 +48,7 @@ const loginCred = {
 
     cy.get('[aria-label="New Folder"]').type('Folder Created')  // Create folder name  
     //cy.get('.new-folder__entities > :nth-child(1)').click() 
-    cy.get('.button__primary').click() // Folder created successfully 
+    cy.get('.modal__footer-button-wrapper > :nth-child(2) > .button__info').click() // Folder created successfully 
     cy.get('.navbar__profile-wrapper').click()
     cy.get('[aria-label="Logout"]').click()
     cy.get('.button').should('contain','Login')
