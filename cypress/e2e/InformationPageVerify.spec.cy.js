@@ -45,10 +45,10 @@ it('Notification page verify' ,() => {
 
     //cy.get('[href="/settings/security"]').click() // Click on Security page
     cy.get('[href="/settings/information"]').click() // Click on Information page
-
+    cy.wait(5000)
     cy.get('.page-toolbar__title').should('contain' , 'Information') // Verify Information page
     cy.get('.information__grid-wrapper > :nth-child(1) > :nth-child(1)').should('contain' , 'Your Package Settings')
-    cy.get('.information__grid-wrapper > :nth-child(1) > :nth-child(3)').should('contain' , 'Storage')
+    cy.get('.information__grid-wrapper > :nth-child(1) > :nth-child(3)').should('contain' , 'Storage').wait(5000)
     cy.get(':nth-child(2) > .settings__section-title').should('contain', 'Click on the link below to read our:')
 
 
@@ -60,7 +60,7 @@ it('Notification page verify' ,() => {
         //Log out from User account
 
         cy.get('.navbar__profile-wrapper').click()
-        cy.get('[aria-label="Logout"]').click()
+        cy.get('[aria-label="Logout"]').click().wait(5000)
         cy.get('.button').should('contain' , 'Login')
     
 

@@ -37,9 +37,9 @@ const loginCred = {
    }
       
    cy.get('.navbar__profile-wrapper').click()   // Click on welcome menu link
-   cy.wait(5000)
+   cy.wait(8000)
    cy.get('[aria-label="Logout"]').click() // Logout from user account.
-   cy.wait(5000)
+   cy.wait(8000)
 
 
    

@@ -45,6 +45,7 @@ it('Login as a Trusted Advisor and check client LIst ', function()
         }
     
     cy.get('.page-toolbar__title').should('contain', 'Clients')
+    cy.wait(5000)
 
      //LogOut From TA user account
     cy.get('.navbar__profile-wrapper').click()
@@ -77,15 +78,15 @@ it('TA login user and accesss into Vault user account', function()
 
 
     //Access Into Vault account 
-
+    cy.wait(5000)
     cy.get(':nth-child(2) > .smart-table__table-row > :nth-child(2)').dblclick()
     cy.get('.dashboard__header-title').should('contain','Welcome')
 
      //LogOut From TA user account
      cy.get('.navbar__profile-wrapper').click()
-     cy.get('[aria-label="Logout"]').click()
+     cy.get('[aria-label="Logout"]').click().wait(5000)
      cy.get('.button').should('contain','Login')
-
+     
 
 })
 

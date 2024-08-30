@@ -20,7 +20,7 @@ it('Upload File in sub-category',() => {
 
   cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
     if ($ele.is(":enabled")) {
-        cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+oct6+test@gmail.com')
+        cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+aug2+vh+grp0@gmail.com')
         cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
         cy.get('.button').click()
         cy.wait(5000)  

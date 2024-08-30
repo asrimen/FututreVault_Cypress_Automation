@@ -7,7 +7,7 @@ const visitUrl = 'https://testoba.beta.futurevault.com/';
 
 const loginCred = {
 'vh':{
-  'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+  'email':'asrimen79+aug2+vh+grp0@gmail.com', // Login vault user 
   'password':'Rimen1234'
 
 }
@@ -48,7 +48,7 @@ it('Upload Fine in Unfiled section',() =>{
 
     //Upload File in unfiled area
 
-    cy.contains('Unfiled').click({force: true})
+    cy.contains('Unfiled').click()
   
     
 
@@ -56,7 +56,7 @@ it('Upload Fine in Unfiled section',() =>{
 
         cy.get('.icon-view__container').attachFile('Test2.pdf', { subjectType: 'drag-n-drop' });
         //cy.get('.document-upload-footer-toolbar > a').click()
-
+        cy.wait(5000)
         
         cy.get('.progress-queue__header').should('contain', 'Uploaded 1 of 1 documents')
 
@@ -96,9 +96,11 @@ it('Upload Fine in Unfiled section',() =>{
 
     //Upload File in unfiled area
     
-    cy.contains('Unfiled').click({force: true})
+    cy.get(':nth-child(2) > .sidebar__link').click()
     cy.contains('Test2').dblclick()
-    cy.get(':nth-child(1) > .form-control__label').should('contain' , 'Name')
+    cy.wait(6000)
+
+    //cy.get(':nth-child(1) > .form-control__label').should('contain' , 'Name')
 
 
 

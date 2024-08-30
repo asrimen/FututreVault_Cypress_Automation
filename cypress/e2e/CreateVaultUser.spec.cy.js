@@ -58,16 +58,26 @@ context('Login sponsor admin user', () => {
     //Funcional Script for Random Emails
 
     const value =invoiceId_alpha_numeric(6)
-    cy.get('.form-control__wrapper--error > .form-control__input-wrapper > .form-control__input > .form-control').click().type(value+'@gmail.com')
+    cy.get('.form-group--column > :nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').click().type(value+'@gmail.com')
 
        //.type('{enter}') 
        cy.tab()
-      .type('1234') // Reference number set 
-      cy.get('.form-group--column > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').click()       //.type('{tab}')
-       .select("Personal") // Package selecte from list.
-    cy.tab()
-       .select('A1') // Tamplate select from list.
 
+       cy.get('.form-group--column > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control')
+         .select('Generic') // Select Entity Type 
+       cy.tab()
+
+      .type('1234') // Reference number set 
+
+      cy.get(':nth-child(5) > .form-control__input-wrapper > .form-control__input > .form-control')      //.type('{tab}')
+       .select("Personal") // Package selecte from list.
+    cy.tab() 
+
+    cy.get(':nth-child(6) > .form-control__input-wrapper > .form-control__input > .form-control')
+       .select('A1') // Tamplate select from list.
+     
+       cy.get(':nth-child(7) > .form-control__input-wrapper > .form-control__input > .form-control')
+         .select('English')
 
       cy.get('[type="checkbox"]').check({force:true})
       // Send Activation Email checked 

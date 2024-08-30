@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-const visitUrl = 'https://gta.beta.futurevault.com/'; 
+const visitUrl = 'https://multici.beta.futurevault.com/'; 
 // const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'SponsorAdmin':{
-    'email':'asrimen79+admin+dec6@gmail.com', // Login Sponsor Admin user
+    'email':'asrimen79+admin+grp0+oct18@gmail.com	', // Login Sponsor Admin user
     'password':'Rimen1234'
  
   }

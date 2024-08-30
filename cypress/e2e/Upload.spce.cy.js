@@ -8,7 +8,7 @@ const visitUrl = 'https://testoba.beta.futurevault.com/';
 // const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+    'email':'asrimen79+july29+vh+grp0@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }

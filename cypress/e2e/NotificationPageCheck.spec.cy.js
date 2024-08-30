@@ -5,7 +5,7 @@
 const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+grp0+vh+aug25@gmail.com', // Login vault user 
+    'email':'asrimen79+aug2+vh+grp0@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }
@@ -38,7 +38,7 @@ it('Login Vault holder and Go to setting page' , () => {
 
   })
 
-
+  cy.get('.sidebar__list > :nth-child(1) > .sidebar__link').click()
     cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     cy.wait(5000)
     
@@ -72,11 +72,13 @@ it('Login Vault holder and Go to setting page' , () => {
 
   
     cy.get('.token-refresh-modal__form-subtext > a').click()
-    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+grp0+vh+aug25@gmail.com')
+    cy.get('form > :nth-child(1) > :nth-child(1)').type('asrimen79+aug2+vh+grp0@gmail.com')
     cy.get('form > :nth-child(1) > :nth-child(2)').type('Rimen1234')
     cy.get('.button').click()
-    cy.get('.dashboard__header-title').should('contain', 'Welcome,')
 
+    cy.get('.sidebar__list > :nth-child(1) > .sidebar__link').click()
+    cy.get('.dashboard__header-title').should('contain', 'Welcome,')
+     
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
 

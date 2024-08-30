@@ -5,7 +5,7 @@ const visitUrl = 'https://testoba.beta.futurevault.com/';
 
 const loginCred = {
 'vh':{
-  'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+  'email':'asrimen79+aug2+vh+grp0@gmail.com', // Login vault user 
   'password':'Rimen1234'
 
 }
@@ -38,7 +38,7 @@ it('Vault User click on Appearance and Change the Language' ,() => {
           cy.get('.button').click()
           cy.wait(5000) 
       }
-
+    cy.get('.sidebar__list > :nth-child(1) > .sidebar__link').click()
     cy.get('.dashboard__header-title').should('contain', 'Welcome,')
     cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
     cy.get('[aria-label="Account Settings"]').click() 

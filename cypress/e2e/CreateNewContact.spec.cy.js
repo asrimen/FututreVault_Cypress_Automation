@@ -64,7 +64,7 @@ context('Create a new contact', () => {
 })
 
   it('Update Contact Information',() => {
-
+    cy.wait(5000)
     cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
       if ($ele.is(":enabled")) {
           cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+ref4@gmail.com')
@@ -81,20 +81,20 @@ context('Create a new contact', () => {
       
 
       //Click on contact page 
-      
+      cy.wait(5000)
       cy.get('.sidebar__list > :nth-child(4) > .sidebar__link').click()
       cy.get(':nth-child(9) > [style="flex: 1 1 26.6667%;"] > .smart-table__text-ellipsis').dblclick()
-      cy.get('.profile__header-toolbar-button-wrapper > .button__info').click()
-      cy.get('.profile__input-column-inner--general > :nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen up')  // First Name update 
-      cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Cypress')   // Middle Nanme update 
-      cy.get(':nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').type('Cy name')   // Last Name update 
+      cy.get('.profile__header-toolbar-button-wrapper > .button__info').click().wait(5000)
+      cy.get('.profile__input-column-inner--general > :nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').clear().type('Rimen up')  // First Name update 
+      cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').clear().type('Cypress')   // Middle Nanme update 
+      cy.get(':nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').clear().type('Cy name').wait(5000)   // Last Name update 
 
+   
 
+      cy.get('.profile__header-toolbar-button-wrapper > .button__info').click().wait(5000)
+      cy.get('.toast__message').should('contain','Successfully updated contact profile').wait(5000)
 
-      cy.get('.profile__header-toolbar-button-wrapper > .button__info').click()
-      cy.get('.toast__message').should('contain','Successfully updated contact profile')
-
-
+   
 
       //Log out from User account
 

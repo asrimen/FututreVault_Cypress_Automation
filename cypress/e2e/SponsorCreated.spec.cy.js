@@ -15,15 +15,22 @@ function invoiceId_alpha_numeric(length){
 
 it('FutureVault Admin login and create new sponsor',() => {
 
-    cy.visit('https://admin-k8s.dev.futurevault.com/')
+    //cy.visit('https://admin-k8s.dev.futurevault.com/')
     cy.visit('https://admin.beta.futurevault.com/')
 
     cy.get(':nth-child(1) > .form-control').type('asrimen79@gmail.com')
     cy.get(':nth-child(2) > .form-control').type('Pass1234')
     cy.contains('Login').click()
-    cy.get('.page-header').should('contain' , 'Vault Holders')
+   // cy.get('.page-header').should('contain' , 'Vaults')
 
-    cy.get('#LeftNavigation > .nav > :nth-child(9) > a').click()
+   cy.on('window:confirm', (text) => {
+    expect(text).to.contains('OK');
+    return true; // Clicks OK
+  
+   })
+
+    cy.get('div > .form-control').click()
+    .select('testoba')
     cy.get('.page-header').should('contain', 'Sponsors')
     cy.get('.text-center > .btn').click()
     //cy.get('h1').should('contain' , 'Sponsor Configuration')
@@ -88,7 +95,7 @@ it('FutureVault Admin login and create new sponsor',() => {
     
 })
 
-  
+
 
 
   

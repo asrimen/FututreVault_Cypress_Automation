@@ -42,19 +42,23 @@ it('Create New Reminders',() =>{
 
         cy.contains('Reminders').click() //CLick on Reminder page 
 
-        cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click()  //Click on Create New Reminder button
-        cy.get('.modal__footer-button-wrapper > :nth-child(2) > .button').click()
+        cy.get('.page-toolbar__children-wrapper > :nth-child(1)').click()  //Click on Create Reminder button
+        cy.wait(5000)
 
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Cypress Reminder')
+    
 
-        cy.get(':nth-child(1) > :nth-child(3) > .form-control__input-wrapper > .form-control__input > .form-control').type('This is Cypress message')
+        cy.get('.modal__body-content > form > :nth-child(1) > :nth-child(2)').click().
+        type('Cypress Reminder')
+
+        cy.get('form > :nth-child(1) > :nth-child(3)').click().type('This is Cypress message')
+
         cy.get('.react-datepicker__input-container > .form-control').click()
          
        // Select date from calender  
-       cy.get('.react-datepicker__input-container > .form-control').dblclick()   // Select Next month 
+       //cy.get('.react-datepicker__input-container > .form-control').dblclick()   // Select Next month 
         
-        cy.get('.react-datepicker__day--026').click()
-        cy.get(':nth-child(5) > .react-datepicker__day--030').click()
+       cy.get('.react-datepicker__header-wrapper > :nth-child(4)').click()
+       cy.get('.react-datepicker__day--028').click()
         
         
         cy.get('.button__info').click()
@@ -62,7 +66,11 @@ it('Create New Reminders',() =>{
         cy.get('.toast').should('contain','Successfully created reminder')
         cy.get('.page-toolbar__title').should('contain','Reminders')
 
+            //Log out from User account
 
+      cy.get('.navbar__profile-wrapper').click()
+      cy.get('[aria-label="Logout"]').click()
+      cy.get('.button').should('contain' , 'Login')
 
    })
   })
@@ -89,20 +97,34 @@ it('Create New Reminders',() =>{
 
         cy.contains('Reminders').click()
         cy.contains('General').click()
-        cy.get('.page-toolbar__children-wrapper > :nth-child(2)').click()
+        //cy.get('[data-id="66d02ccf2e9b535e95e1627b"] > .smart-table__table-row > [style="flex: 1 1 38.4615%;"]').click()  // Select Reminder 
+        cy.get('.page-toolbar__children-wrapper > :nth-child(2)').click()   //Click on Action button
+
         cy.get('[aria-label="Edit Reminder"]').click()
         cy.get(':nth-child(1) > :nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').select('Reporting')
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').clear().type('Update Reminders')
-        cy.get('.react-datepicker__input-container > .form-control').click()
-        cy.get('.react-datepicker__header-wrapper > :nth-child(4)').click()
-        cy.get(':nth-child(5) > .react-datepicker__day--028').click()
+        cy.get(':nth-child(1) > :nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Update Reminders')
+        cy.tab()
+          .type('Cypress Update message')
+        
 
-        //cy.get('.react-datepicker__time-list > :nth-child(32)').click()
+        cy.get('.react-datepicker__input-container > .form-control').click()
+
+        cy.get('.react-datepicker__header-wrapper > :nth-child(4)').click()
+        cy.get('.react-datepicker__day--028').click()
+
+        
+
+        
+
 
         cy.get('.button__info').click()
         cy.get('.toast').should('contain','Successfully updated reminder')
 
-  
+           //Log out from User account
+
+      cy.get('.navbar__profile-wrapper').click()
+      cy.get('[aria-label="Logout"]').click()
+      cy.get('.button').should('contain' , 'Login')
 
 
     })
@@ -133,16 +155,22 @@ it('Create New Reminders',() =>{
 
     
         cy.contains('Reminders').click()
-        cy.contains('Reporting').click()
+        cy.wait(5000)
+        cy.contains('Cypress Reminder').click()
+          
         cy.get('.page-toolbar__children-wrapper > :nth-child(2)').click()
-        cy.get('[aria-label="Delete Reminder"]').click()
+        cy.get('.dropdown__list-item--error').click()
         cy.get('.swal2-confirm').click()
         cy.get('.toast__message').should('contain','Successfully removed reminder')
 
+          
 
 
+             //Log out from User account
 
-
+      cy.get('.navbar__profile-wrapper').click()
+      cy.get('[aria-label="Logout"]').click()
+      cy.get('.button').should('contain' , 'Login')
 
 
 

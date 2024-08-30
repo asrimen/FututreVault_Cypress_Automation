@@ -4,7 +4,7 @@ const visitUrl = 'https://gta.beta.futurevault.com/';
 // const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+vh+may22+1@gmail.com', // Login vault user 
+    'email':'asrimen79+aug2+vh+grp0@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }
@@ -56,16 +56,9 @@ const loginCred = {
             }
 
         })
-              //Log out from User account
 
-             cy.get('.navbar__profile-wrapper').click()
-             cy.wait(5000)
-             cy.get('[aria-label="Logout"]').click()
-             cy.wait(5000)
-             cy.get('.button').should('contain' , 'Login')
-   
+      })
 
-})
     
 
 

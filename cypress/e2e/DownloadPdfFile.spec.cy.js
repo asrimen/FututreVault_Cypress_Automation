@@ -7,7 +7,7 @@ it('Download pdf file from sponsor category',() => {
 
     cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').then(($ele) => {
       if ($ele.is(":enabled")) {
-          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+vh+oct6+test@gmail.com')
+          cy.get(':nth-child(1) > .form-control__input-wrapper > .form-control__input > .form-control').type('asrimen79+aug2+vh+grp0@gmail.com')
           cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
           cy.get('.button').click()
           cy.wait(5000)  
@@ -32,7 +32,7 @@ it('Download pdf file from sponsor category',() => {
 
 
       //Click on Pdf file and preview the file
-       
+      cy.wait(5000) 
       cy.contains('Test2').dblclick()
       
       //cy.get('.document__tab--active > .document__tab-title').should('contain' , 'Test2{}')
@@ -40,7 +40,7 @@ it('Download pdf file from sponsor category',() => {
       //Click on Download link and download pdf file
 
       cy.get('.document-body-details-download > .document-link').click()
-      cy.wait(3000)
+      cy.wait(6000)
       //cy.get('.toast__message').should('contain' , 'Test2 downloaded')
 
 

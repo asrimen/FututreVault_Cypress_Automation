@@ -4,7 +4,7 @@ const visitUrl = 'https://testoba.beta.futurevault.com/';
 // const visitUrl = 'https://testoba.beta.futurevault.com/'; 
 const loginCred = {
   'vh':{
-    'email':'asrimen79+vh+oct6+test@gmail.com', // Login vault user 
+    'email':'asrimen79+july29+vh+grp0@gmail.com', // Login vault user 
     'password':'Rimen1234'
  
   }
@@ -34,17 +34,45 @@ const loginCred = {
        }
 
     cy.contains('Unfiled').click()    //Click on Unfiled section 
+    cy.wait(5000)
+    cy.get('.page-toolbar__title').should('contain','Unfiled')
+
     cy.contains('Shared').click()     //Click on shared sections
+    cy.wait(5000)
+    cy.get('.page-toolbar__title').should('contain','Shared')
+
+    cy.contains('Expiring').click() //Click on Expiring Link page
+    cy.wait(5000)
+    cy.get('.sidebar__dropdown-children-group > :nth-child(4) > .sidebar__link').should('contain','Expiring')
+
+
     cy.contains('Deleted').click()   //click on Deleted tab 
+    cy.wait(5000)
+    cy.get(':nth-child(5) > .sidebar__link').should('contain','Deleted')
+
     cy.contains('Reminders').click() // Click on Remidner page
+    cy.wait(5000)
+    cy.get('.sidebar__list > :nth-child(3) > .sidebar__link').should('contain','Reminders')
+
+
     cy.contains('Contacts').click()  //Click on Contacts page
+    cy.wait(5000)
+    cy.get('.sidebar__list > :nth-child(4) > .sidebar__link').should('contain','Contacts')
+    cy.get('.sidebar__list > :nth-child(5) > .sidebar__link').click()
+    cy.wait(5000)
+    cy.get('.page-toolbar__title').should('contain','Quick Links')
+
+
+    cy.get('.sidebar__list > :nth-child(1) > .sidebar__link').click()
+    cy.get('.dashboard__header-title').should('contain','Welcome')
+
     cy.contains('All').click()       //Go back to all page
+    cy.get('.page-toolbar__title').should('contain','All Documents')
 
     cy.get('.sidebar__list > :nth-child(4) > .sidebar__link').click(); //Click on Contact page.
     cy.get('.navbar__profile-wrapper').click()
     cy.get('[aria-label="Logout"]').click()
     cy.get('.button').should('contain','Login')
-
     
 
   

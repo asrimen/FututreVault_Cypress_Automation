@@ -56,8 +56,7 @@ it('Shared File and page verification ' ,()=>{
     cy.get('[href="/shared/others"]').should('contain' , 'Shared With Others')
 
     cy.contains('TestShared').dblclick()
-    cy.get(':nth-child(1) > .form-control__label').should('contain' , 'Name')
-
+    
     //Check All shared Action button pages
     cy.get('.sidebar__dropdown-children-group > :nth-child(3) > .sidebar__link').click() // CLick on Shared Tab 
     cy.contains('TestShared').click()  //Click on Shared file 

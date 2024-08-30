@@ -40,16 +40,16 @@ const loginCred = {
       }
 
     
-    cy.get('.sidebar__dropdown-group--expanded > :nth-child(1) > .sidebar__link').dblclick()
+    cy.get('.sidebar__dropdown-group--expanded > :nth-child(1) > .sidebar__link').dblclick().wait(5000)
     cy.get('.sidebar__dropdown-children-group > :nth-child(1) > .sidebar__link > .sidebar__title').click()
-    cy.get('.sidebar__dropdown-children-group > :nth-child(1) > .sidebar__link').click()
-    cy.get('.navbar__upload').click()
+    cy.get('.sidebar__dropdown-children-group > :nth-child(1) > .sidebar__link').click().wait(5000)
+    cy.get('.navbar__upload').click().wait(5000)
 
 
-    cy.get('[aria-label="New Folder"]').type('Folder Created')  // Create folder name  
+    cy.get('[aria-label="New Folder"]').type('Folder Created').wait(5000)  // Create folder name  
     //cy.get('.new-folder__entities > :nth-child(1)').click() 
     cy.get('.modal__footer-button-wrapper > :nth-child(2) > .button__info').click() // Folder created successfully 
-    cy.get('.navbar__profile-wrapper').click()
+    cy.get('.navbar__profile-wrapper').click().wait(5000)
     cy.get('[aria-label="Logout"]').click()
     cy.get('.button').should('contain','Login')
 

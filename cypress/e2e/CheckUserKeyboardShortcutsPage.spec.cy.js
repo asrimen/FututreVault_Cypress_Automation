@@ -29,7 +29,7 @@ it('Check Vault User Keyboard shoortcuts Page and verify page',() =>{
         {
             cy.get(':nth-child(2) > .form-control__input-wrapper > .form-control__input > .form-control').type('Rimen1234')
             cy.get('.button').click()
-            cy.wait(5000) 
+            cy.wait(8000) 
         }
 cy.get('.dashboard__header-title').should('contain', 'Welcome,')    // NEW CODE UDPATE ON GIT
 

@@ -25,16 +25,16 @@ it('Notification page verify' ,() => {
     
     cy.get('form > :nth-child(1) > :nth-child(1)').type(loginCred.vh.email)
     cy.get('form > :nth-child(1) > :nth-child(2)').type(loginCred.vh.password)
-    cy.get('.button').click()
+    cy.get('.button').click().wait(5000)
     cy.get('.dashboard__header-title').should('contain', 'Welcome, Rimen Vault')
     
-    cy.get('.navbar__profile-wrapper').click()           //Click on Welcome Menu List 
-    cy.get('[aria-label="Account Settings"]').click()   // Click on Profile Setting button
+    cy.get('.navbar__profile-wrapper').click().wait(5000)          //Click on Welcome Menu List 
+    cy.get('[aria-label="Account Settings"]').click().wait(5000)  // Click on Profile Setting button
 
-    cy.get('[href="/settings/security"]').click() // Click on Security page
+    cy.get('[href="/settings/security"]').click().wait(5000) // Click on Security page
 
 
-    cy.get('.page-toolbar__title').should('contain' , 'Security') // Verify Security page
+    cy.get('.page-toolbar__title').should('contain' , 'Security').wait(5000) // Verify Security page
 
 
 
